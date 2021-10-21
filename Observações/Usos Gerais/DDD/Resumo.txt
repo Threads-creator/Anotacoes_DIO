@@ -1,0 +1,36 @@
+DDD = Domain Driven Design (Design Orientado a Domínio)
+
+Consiste em uma abordagem de design de software disciplinada que reúne um conjunto de conceitos, tecnicas e princípios baseados em um modelo de domínio. Domínio é todo e qualquer conhecimento utilizado em uma determinada área
+
+Características:
+-> Alinhamento do código com o negócio: o desenvolvedor deve se comunicar constantemente, e de maneira úbiqua(comum entre todos), com os especialistas do domínio. Dessa forma o código é orientado ao domínio
+-> Favorecer reutilização: blocos de construção podem ser reutilizados entre domínios;
+-> Minimo de acoplamento: varias partes do sistema interagem sem muita dependência entre elas. Isso ocorre pois quanto menos interdependencia entre as partes, mas simples de manter é o codigo
+-> Independência de Tecnologia: a tecnologia é algo secundário, o foco é no domínio e as regras do negócio.
+
+MDD:
+
+Modelo abstrato que representa perfeitamente seu domínio. Tudo que existe no seu negócio deve aparecer no modelo. Só aparece no modelo aquko que está no negócio. Deve ser criado em conjunto com especialistas de dominio, negócio, analistas arquitetos e desenvolvedores. Desse ser um processo de maturação contínuo
+
+Blocos de Construção MDD:
+
+Consiste isolar modelos de domínio das demais partes que compõem o sistema. Por exemplo dividir o dominio de seguro de carro do seguro de vida. Essa separação envolve uma arquitetura de camadas dividida em:
+-> Interface do Usuario: parte que exibe as informações e interpreta ações do usuario
+-> Aplicação: não possui logica de negócio e serve de ponte entre a interface e as camadas inferiores
+-> Dominio: representa conceitos, regras e lógicas de negócio. Todo foco de DDD esta nessa camada
+-> Infra-Estrutura: fornece recursos tecnicos que darao suporte as camadas superiores. Como persistencia de dados, envio de mensagens, conexao banco de dados e outros.
+
+Regras para MDD:
+
+-> Entidade: classes de objetos que necessitam de uma identidade. São elementos do domínio com ciclo de vida. Ex: Cliente
+-> Objetos de Valores: objetos que so carregam valores, mas nao possuem distinção de identidade. Ex: strings, numeros, cores.
+-> Agregados: composição de entidades ou objetos de valores que são encapsulados em uma unica classe. Ex: Agregado Cliente (classe) que possui uma entidade Endereco e um objeto de valor enum TipoCliente(PF, PJ) dentro dele. As modificações de Endereco e TipoCliente so podem ser feitas via acesso a classe Cliente.
+-> Fabricas: classes responsáveis pelo processo de criação dos Agregados ou dos Objetos de Valores. Extraímos as regras de criaçao para uma classe externa: fabrica
+-> Serviços: classes que contem lógica de negocio, mas nao pertencem a nehuma entidade ou Objeto de valor. Serviços não guardam estados, com um input x gera resultado x.
+-> Repositóris: classe que administra ciclo de vida dos objetos. Centralizam a criação, alteração e remoção de objetos
+-> Módulos: abstração que tem por objetivo agrupar classes por determinado conceito de Dominio. Ex: package em java, namespace em C#, modulos em Ruby
+
+
+Camada Anti-corrupção
+
+Consiste em uma camada do DDD que garante a integridade dos dados, entre aplicações antigas (legadas) e novas em DDD. Essa camada é responsável por tratar trigers de eventos e garantir a consistencia dos dados. Utilizada quando quer migrar um sistema antigo para formato DDD. 

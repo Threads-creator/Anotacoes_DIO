@@ -1,0 +1,40 @@
+Estrutura de arquivos maven: 
+-> .mvn: cria um wrapper para permitir que todos os desenvolvedores sempre usem a mesma versão do framework
+-> src: as pastas de arquivos de codigo em si
+-> test: serve para armazenar arquivos de testes
+-> mpom.xml: define características gerais do projetos e dependências. Análogo ao config.json do Angular.
+
+O build consiste em compilar e realizar testes unitários. Depois de buildar, o maven gera o target (uma pasta com relatórios do projeto)
+
+Estrutura de arquivos gradle:
+Muito parecido com o maven, com algumas diferença
+-> .gradle: cria o wrapper para permitir que todos os desenvolvedores sempre usem a mesma aversão do framework
+-> src: onde fica os códigos
+-> test: os tests
+-> build.gradle: fica as configurações e dependências do projeto 
+
+Tanto maven quanto gradle são pensados para versionamento de código como git.
+
+******************************************************************
+
+Termos:
+
+Bytecode: código gerado pela compilação em Java. Que é interpretado pela JVM durante a execução do programa.
+
+JVM: máquina virtual do java
+
+JRE: Java Runtime Environment: ambiente minimo para execução de códigos java.
+
+JDK: kit de desenvolvimento java
+
+Java SE: java Standard Edition, é a distribuição mínima da plataforma  de desenvolvimento de aplicações Java. Normalmente versões open source
+
+Java EE: java Enterprise Edition, extensão do java SE voltado para o desenvolvimento de sistemas corporativos. EX: glassfish
+
+Jakarta EE: conjunto de especificações Java EE, depois que os direitos do  java saiu da Oracle para Eclipse Foundation.
+
+
+
+
+
+

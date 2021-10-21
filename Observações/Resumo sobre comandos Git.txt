@@ -1,0 +1,32 @@
+/* GIT MODIFICAÇÃO DE ARQUIVOS */
+
+git ini = transforma o diretório atual em um projeto git local
+git add "arquivo" = adiciona um arquivo a ser comitado
+git commit -m "Observação commit" = comita as mudanças acrescentadas com o add no diretorio git local
+git remote add origin "link do diretório no github" = adiciona o git local ao git remoto definido no link
+git push = envia novas commits locais para o git remoto
+
+-----------------------------------------------------------------------------------
+
+/* BRANCHS COMANDOS */
+
+São ramos do desenvolvimento de uma aplicação, basicamente cria uma copia dos arquivos principais sem alterá-los diretamente
+
+git branch = lista todas as branchs locais
+git branch "nome" = cria uma nova branch
+git checkout "nome" = muda de uma branch para outra
+git checkout -b "nome" = cria uma nova branch e muda para nova branch
+git branch -D "nome" = deleta uma branch
+git push origin "nome" = envia uma branch local para o repositório github
+
+----------------------------------------------------------------------------------
+
+/* EXTRAS */
+
+git remote = lista todas as branchs remotas
+git commit -a -m "Observação" = cria e commita um arquivo em um único comando
+
+/* README */
+
+são escritos em uma marcação Markdown, recomenda-se utilizar um editor externo para converter texto comum em readme (EX: pandao.github/editor.md). Imagens não são hospedadas no github, utilizar um servidor externo para isso, exemplo imgur, e linkar no readme
+

@@ -1,0 +1,110 @@
+/*	WEB SERVICE	*/
+
+serviços web que possibilitam que programas executados em linguagems diferentes se comuniquem entre si através da rede, sem que uma aplicação acesse a outra diretamente. Um servidor Web fica responsável de intermediar a comunicação entre as aplicações, utilizando linguagems de markup como XML e JSON
+
+XML = linguagem de markup estruturada em tags
+JSON (JavaScript Object Notation)= linguagem de markup estruturada em chaves
+
+SOAP = protocolo de comonicação utilizados em Web Services e que tem como base o XML
+Estrutura basica:
+----------------------------------------------------------------------------------------------
+	<soap:Envelope .....>
+		<soap:Header> 
+			"região para metadados da mensagem"
+		</soap:Header>
+		<soapenv:Body> 
+			"região para os objetos, variaveis disponiveis, a mensagem em si"
+		</soapenv:Body>
+	</soap:Envelope>
+----------------------------------------------------------------------------------------------
+	
+WSDL: funciona como um contrato para acessar o web service, lista os metodos, variáveis, objetos e especificações de acesso que o serviço disponibiliza
+XDS: schema que define como a soap message(XML) será enviada através do Web Service	
+
+Propramas para interpretar WDSL: SOAPUI
+
+##############################################################################################
+
+REST = Representational State Transfer, é um estilo de arquitetura de software que define a implementação de um serviço web, pode trabalhar com XML, JSON, e outros. Ele retorna o objeto como ele esta no momento. Utiliza metodos HTTP.
+
+API = Aplication Programming Interface, são conjunto de rotinas documentados e disponibilizados por uma aplicação para que outras aplicações possam consumir suas funcionalidades
+
+##############################################################################################
+
+
+
+/*	HTTP   */
+
+	GET - solicita a representação de um recurso
+	POST - solicita a criação de um recurso
+	DELETE - solicita a exclusão de um recurso
+	PUT - solicita a atualização de um recurso
+
+Código de Estado: mensagem enviada pelo servidor ao cliente para informar o estado de uma solicitação
+	1xx - Informativo: uma solicitação foi aceita porem está aguardando processamento
+	2xx - Sucesso: solicitação aceita e processada
+	3xx - Redirecionamento: solicitação enviada a uma URI desatualizada do servidor, há um redirecionamento entre dominios do site
+	4xx - Erro do Cliente: envia uma solicitação a uma URI que nao existe
+	5xx - Erro do Servidor: servidor sobre um erro interno de processamento da solicitação e nao consegue retornar a resposta devida
+
+
+/* ARQUITETURA DE SISTEMAS */
+
+arquiteturas
+
+Monolitico: um software grande, com diversos serviços implementados internamente e fortemente dependentes uns dos outros. Possui debug demorado, refatoração custosa, mudanças pode causar interrupção da aplicação, complexidade em escalar recursos ja que aumentar um unico serviço normalmente envolve a escalonação de outros serviços do monolito  mesmo nao sendo necessários (escalona a aplicação inteira)
+
+Microsserviços: um software dividido em contextos de negócios, com partes que interagem entre si por meio de APIs. Permite facil escalonação customizada da  aplicação, ja que so os serviços realmente necessários são escalonados. Orientados ao desenvolvimento agil, logo melhora a identificação de erros mais rapidamente
+
+Os nodos podem se comunicar entre si diretamente; através de um intermediador entre eles (Message Broker, que é responsável por armazenar e reenviar a mensagem, mesmo que o remetente nao esteja online, a mensagem é enviada ao destino [comunicação assíncrona]); ou através de um gerenciador de pipeline (responsável pela comunicação e tratar erros caso um nodo venha a falhar, atraves de rollback, reversão de passos e outros [comunicação síncrona])
+
+Para transformar um software monolito em microsserviços: deve-se definir os contextos de negócio de cada parte da aplicação de modo que os solicitantes dos serviços consigam entender e fornecer feedback desses contextos. Depois dessa bound of context, é necessário mapear os contextos de modo a definir quais partes deverão ser envolvidada no desenvolvimento de cada contexto, a dependencia entre os microsserviços, as partes comuns em contextos diferentes, e os microsserviços externos necessarios.
+
+
+/* IoT (Internet of Things) */
+
+Basicamente consiste na utilização de objetos de dia a dia associada a uma rede e trocando informações entre si. Por exemplo, sistemas de cameras ip de video monitoramento e outros. Os dispositivos basicamente utilizam sensores para coletar dados que são utilizados posteriormente para melhorar processos e produtos.
+
+Intes a se verificar quando implementar uma IoT:
+
+-> Baixo consumo de energia (como há uma utilização comumente de sensores "parasitamente" a um dispositivo consumir baixa energia evita a degradação do dispositivo base);
+-> Redes de dados limitado (alguns ambientes podem ser reduzidos em banda de rede, recomenda-se transmitir o minimo de informações e fazer cache local de parte das informações);
+-> Resiliencia (deve-se verificar o quanto o dispositivo deve ficar ativo e fazendo essa comunicação e analise);
+-> Segurança (deve-se evitar que pessoas não autorizadas acessem recursos privados dos dispositivos);
+-> Customização (deve-se atentar ao ambiente e as diferenciações que ele necessita em relação a outros);
+-> Baixo Custo (baixo custo torna o dispositivo mais atrativo ao publico consumidor);
+
+Exemplos de dispositivos utilizados:
+
+-> Arduino: um dispositivo que permite determinar entradas que são processadas pelo dispositivo através de um codigo C/C++ e envia outputs simples. Mais utilizado para estudos academicos mesmo devido a limitação.
+-> MCU (Microcontrolador de chip único): chip pequeno para dispositivos embarcados, possui um chip com os recursos parciais de um pc e um sistema operacional real time. Normalmente utilizados em componentes criticos, uso militar, medicina e outros.
+-> Raspberry Pi: computador completo, usa um chipset unificado, rodando sistemas operacionais comuns do PC (linux e windows), uso comercial e domestico.
+
+
+Protocolos utilizados para comunicação:
+
+MQTT: linguagem mais utilizada em IoT para comunicação. usa pilha TCP/IP, é assincrono (M2M - máquina para máquina), utiliza padrao OASIS.
+
+Esse protocolo utiliza o modelo Publish/Subscribe: basicamente separa o consumidor e o fornecdor da informação. Existe um midware que intermedia a troca de informações (o MQTT Broker). Havendo os publish(aqueles que enviam as informações) e subscribe (aqueles que se inscrevem no MQTT broker para receber as informações dos fornecedores).
+
+formato da comunicação:
+
+mqtt	://	broker.io	/	codigo	/	gps	/	position
+(protocolo)	(broker)	(user identifier)	(sensor)	(information type)
+
+Obs: o termo '+' pode substituir alguns desses parametros caso deseje pegar todos os elementos
+
+Qos: qualidade de serviço. Possui tres tipos usando o mqtt:
+0 : menor esforço na comunicação, nao garante a entrega
+1 : garante que a mensagem foi entregue no mínimo uma vez ao receptor. Caso o cliente nao recebua uma confirmação ele retransmitir para o broker
+2 : garante que a mensagem foi entregue no mínimo uma vez ao receptor. Mensagem pode ser retransmitida se nao houver confirmação de entrega. o cliente publica a mensagem, recebe a confiramção de armazenamento do broker, o cliente informa que a mensagem foi recebida, o broker entao processa e remove essa mensagem de seu armazenamento e manda a confirmação para o cliente. (semelhante ao hand-shack-triplo)
+
+Modelo basico IoT:
+
+Device	->	MQTT Broker	->	Worker	->	Data store
+(dispositivo)	(Message Broker)	(aplicação)	(banco de dados)
+
+
+
+
+

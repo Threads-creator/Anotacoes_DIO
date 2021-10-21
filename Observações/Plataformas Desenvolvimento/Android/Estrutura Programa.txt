@@ -1,0 +1,90 @@
+CRIAÇÃO:
+
+Projetos android podem ter o mesmo nome, porém devem possuir package names diferentes. É o package name que funciona como identificador unico da aplicação na play store e no dispositivo android.
+
+Versão de android (API): interfere nos recursos da aplicação e na abrangência de aparelhos compatíveis
+
+..................................................
+
+Android Manifest: arquivo com informações essencias para as ferramentas de compilação do Android. Além de informar as permissões necessárias do aplicativo.
+
+..................................................
+
+CICLO DE VIDA ANDROID:
+
+O ciclo de vida representa a jornada do usuário pela aplicação. Representa os estados que a aplicação pode ter dependendo da ação do usuário. Funciona como se houvesse vários "main" sendo executados em cada situação
+
+Ciclo: 
+	sempre começa no onCreate e termina no OnDestroy
+
+	OnCreate() => (criado) cria as instâncias necessárias da aplicação. Chamado quando a aplicação é aberta.
+	OnStart() => (visivel) desenha os componentes visíveis ao usuário. Exibe apenas, ainda nao é possível interagir
+	OnResume() => (iterativo) tela pronta para interação, totalmente visível. Os componentes passam a serem interagíveis pelo usuário
+	OnPause() => (pausado) aplicação parcialmente visível e nao é possivel interagir com a aplicação. Ex: quando há outra aplicação sobrepondo parte da tela, ou usuário olhando a tela de notificações
+	OnStop() => (parado) aplicação minimizada, totalmente nao visível, porém está presente na memória do sistema. Ex: usuário deixa a tela totalmente para fazer uma pesquis no chrome
+	OnRestart() => (recarregado) aplicação sai do estado minimazado (OnStop) para visível (OnResume)
+	OnDestroy() => (destruido) aplicação encerrada, quando o usuário sai em definitivo da aplicação.
+
+
+finish() => metodo que pode ser chamado em qualquer ciclo, faz a aplicação ser passada para o OnDestroy (encerrada). Caso seja chamado no OnCreate vai direto para OnDestroy, se não vai para OnPause -> OnStop -> OnDestroy
+
+....................................................
+
+Gradle
+
+É um gerenciador de build, versões, imports da aplicação e outros
+
+....................................................
+
+Views
+
+Todo componente é uma View (é classe base de todo widget e layout da aplicação)
+Toda View é clicável
+Possui atributos herdados e que podem ser customizados
+Pode-se criar uma view totalmente customizada e ser importada por outras aplicações
+
+...................................................
+
+Views Atributos
+
+Gravity: define a localização do pai em relação aos filhos. (center, botom, top e outros)
+Layout_gravity: define a localização do filho em relação ao pai (center, botom, top e outros)
+
+InputType: tipo de input do componente, (number, text e outros)
+
+Match_parent = componente ocupa todo o tamanho do componente pai
+Wrap_content = componente ocupa apenas o tamanho necessario para caber seu conteudo interno
+
+Medidas:
+	dp => medida para definir tamanho de componentes (altura x largura) da tela (uma boa pratica é 8, 16, 24)
+	sp => medida para definir tamanho de textos de componentes(uma boa pratica é 8, 16, 24).
+
+Visibility: invisible (torna componente invisivel mas ainda ocupa espaço na tela)
+		gone (torna componente invisivel e retira o espaço da tela)
+
+...........................................................
+
+Layout Types
+
+Linear Layout: itens alinhados um apos o outro. Elementos não são sobrepostos. São organizados verticalmente ou horizontalmente
+
+	Principais tags: orientation, gravity
+
+Relative Layout: a posição dos itens é realtiva a outros itens do layout ou ao layout pai. Elementos podem ser sobrepostos. São organizados através de hierarquias sem a necessidade de layouts encadeados
+
+	Principais tags: To_end_of, To_start_of, above, below
+
+Constraint Layout: baseado em restringir os componentes aos limites do layout ou outros componentes. Veio para substituir linear e relative layout. Focado em otimização
+
+	Principais tags: constraint_top_to_bottom, constraint_start_to_start, start, group, guideline, baseline, horizontal_bias, chain
+
+Layouts Obsoletos e/ou pouco utilizados
+
+Absolute Layout: posição absoluta x/y
+
+Table Layout: formato em tabela
+
+Grid Layout: formato em grid com colunas x linhas
+
+Frame Layout: "moldura", ideal para um único item na tela
+

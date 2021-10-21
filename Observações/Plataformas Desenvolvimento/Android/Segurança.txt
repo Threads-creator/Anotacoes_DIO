@@ -1,0 +1,15 @@
+Princípios principais de segurança em aplicações android:
+
+-> Aplicar comunicação segura = definir envio de mensagens entre aplicações de maneira criptografada e com outras medidas de segurança
+-> Oferecer as permissões corretas = solicitar apenas permissões realmente utilizadas pela aplicação
+-> Armazenar dados de forma segura = preferencialmente dados sensiveis da aplicação sao armazenados no armazenamento interno do dispositivo. Dados nao sensíveis podem ser armazenados no armazenamento externo, que pode ser acessado por outra aplicação
+-> Manter os serviços e as dependências atualizadas = dependencias e serviços recebem patchs de segurança que são uteis para garantir segurança do seu app.
+
+
+**********************************************************
+
+App Security Improviment: programa oferece dicas e recomendações para criar apps mais seguros e identifica possíveis melhorias de segurança quando os apps são enviados ao Google Play. Antes de um app ser aceito no Google Play ele passa por testes de segurança, caso encontre envia via e-email notificações ao desenvolvedor
+
+PHAs: aplicativos potencialmente nocivos, são apps identificados pela google play que comprometem a segurança do usuário ou do aparelho em si. Um app pode ser classificado como PHA mesmo nao sendo um software malicioso (virus, trojam e outros). Isso pode ocorrer simplismente porque sua api é antiga e possui falhas de segurança em sistmas android específicos
+
+Programa de divulgação de vulnerabilidade (VDP): programa onde você pode encontrar e corrigir vulnerabilidades à medida que são introduzidas na produção, ajudando a reduzir o risco de incidentes de segurança. Você também pode usar esses dados para encontrar as causas raiz das vulnerabilidades e fazer melhorias abrangentes em seu programa de segurança

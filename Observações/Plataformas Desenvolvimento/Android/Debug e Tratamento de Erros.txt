@@ -1,0 +1,20 @@
+Modo desenvolvedor do android: serve para realizar testes dos app, identificar erros e monitoramento do aparelho. Ao ativar esse modo, as configurações originais do aparelho são salvas, o aparelho passa a usar as configurações de desenvolvedor que são desfeitas assim que esse modo é desativado
+
+Tem diversas funcionalidades dentre elas podemos citar: 
+-> modo demonstração para deixar prints do app no google play mais bonita,
+-> permissões de pc que podem fazer depuração usb, 
+-> informações de hardware como fps,
+-> forçar medições gnss (modifica o local atual do dispositivo para um local fake), 
+-> mostrar onde o usuario ta clicando na tela,
+-> mostrar os limites do layout (onde começa e termina um botao, entre outros)
+-> definir cortes na tela
+-> mostrar caixa de dialogo sempre que um erro ocorrer
+
+
+Debbugging
+
+Serve para executar a aplicação parando nos breakpoints para identificação de erros na aplicação. É possivel definir condicionais para os breakpoints
+
+ADB : android debugging bridge, utilitario que permite que vc realize comandos no dispositivo android que facilitam o processo de debug, simulando algumas cituações do app
+
+Layout inspector: serve para exibir o layout da tela quando a aplicação esta sendo executada, facilita a identificação de erros visuais

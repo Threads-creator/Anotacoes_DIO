@@ -1,0 +1,52 @@
+Qualidade de Software
+
+Área que busca definir os requisitos necessários para que o software ao ser entregue garanta a satisfação do cliente. Um ponto importante de satisfação é a presença ou não de bugs. Por isso processo de testes é fundamental nessa área.
+--------------------------------------------------
+
+Processo de Testes envolve:
+
+-> Planejar: le-se os requisitos do software, levanta dúvidas sobre eles, testa ideias geradas, realiza uma estimativa
+
+-> Projetar: defini-se os casos de teste, o que se espera de um teste. Define: Nome/Titulo, objetivo, pré-condições, passo a passo, resultado esperado. Exemplos de metodologias: 
+	-> Análise valor limite: defini os valores limites de variáveis para casos de erro e conformidade com a função do sistema
+	-> Tabela de decisão: faz uma associação entre regras de negócios e inputs do usuáro (condições) para definir ações esperadas do sistema
+	-> Transição de Estados: definição de diagramas de estado com represenção de eventos que trigam as mudanças 
+	-> Baseado na experiência: faz se uma análise de possiveis erros ja ocorridos anteriormente, exemplo divisão por zero, outofband exception e outros
+
+-> Executar: executa os casos de teste. Antes é necessario ter ambiente atualizado, niveis de acesso compativéis e massa de teste de input
+	-> Documentando erro: 
+		- deve possuir print do erro
+		- descricao passo a passo do processo
+		- descricao erro mostrado
+		- navegador, sistema operacional
+		- versao software usado
+	-> Documentando conformidade: 
+		- deve possuir print do resultado
+		- nome ou id do caso de teste
+		- Data de execução, versão do sistema usado
+		- ciclo de teste
+
+-> Entregar: entrega os artefados gerados pelos testes. Os testes são findados quando atingem os requisitos definidos, por falta de tempo, ou quando custo acaba nao compensando o teste. Exemplos de artefatos gerados:
+	-> Documentação (Casos de Teste / Script de Teste)
+	-> Status Report
+	-> Evidencias de Testes  
+
+----------------------------------------------
+
+Processo de Testes envolve softwares:
+
+-> Planejar : Azure, Jira, TesteLink
+-> Projetar : Azure, Jira, TesteLink
+-> Executar : Azure, Jira, Bugzilla, mantis, redmine
+-> Entregar : Azure TesteLink
+
+Testes Estáticos:
+
+Testes realizados antes de executar o software. Exemplo:
+-> Verificação de diagramas, código, plano de teste, especificações de testes, script de teste, manual de usuários e outros
+
+-------------------------------------------
+
+Links :
+https://github.com/ruirodri/introJUnit
+

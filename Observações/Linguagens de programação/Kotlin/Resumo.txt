@@ -1,0 +1,219 @@
+Desenvolvimento Híbrido: desenvolver para mobile em multiplas plataformas,  android, ios, web, etc. Exemplo de linguagens: dart com Flutter, javascript com ReactNade, C# com Xamarin
+
+Desenvolvimento Nativo: desenvolver somente para android
+
+***********************************************************
+
+Kotlin: 
+
+	Linguagem multiplataforma, orientada a objetos e funcional. Gratuita e de código abertro. Linguagem criada em 2011 pela Jetbrains. 
+
+Aplicabilidade:
+->Android nativo;
+->Mobile multiplataforma (KMM);
+->Frontend Web com Kotlin/JS;
+->Frameworks: Kvision, Frtz2 e outros;
+->Backend com target node.js do Kotlin/JS;
+
+Vantagens:
+
+->Segura, estruturada, menos verbosa, mais otimizada, grande relevância no mercado;
+->Interoperabilidade com Java;
+->Smart casts e null safety;
+->Android é Kotilin First;
+
+Desvantagens:
+
+->Desempenho um puco inferior ao java, porem mais facil de desenvolver
+
+#########################################################
+
+Tipos de dados:
+
+Int
+Long
+Float
+Double
+Array
+Boolean
+Char
+Byte
+Short
+Null!
+
+Todos possuem um valor maximo acessado por MAX_VALUE, e converções 'toAlgo'
+********************************************************
+
+Variáveis:
+
+Var: (CamelCase) variavel que pode ter valor modificado
+Val: (CamelCase) variavel que nao muda de valor (parecido com final Java)
+Const Val: (SNAKE_CASE) constante imutavel que o valor é atribuido durante a compilação. Normalmente usada para constantes globais da aplicação
+
+Obs: variáveis devem ter seus tipos inferidos assim que declarados
+simbolo '?' faz uma variavel permitir a nullabilidade
+
+Exemplo:
+ var ano = "ano string"
+ ano = 2021.toString()
+ println(ano)
+********************************************************
+
+Operadores Aritméticos:
+
+Igual ao java:
+	a + b	
+	a - b
+	a * b
+	a / b
+	a % b
+	a += b	
+	a -= b
+	a *= b
+	a /= b
+	a %= b
+
+Operadores Comparação:
+
+Igual ao java:
+	a > b	
+	a < b
+	a >= b
+	a <= b
+	a == b
+	a != b
+
+Operadores Lógicos:
+
+Igual ao java:
+	E (&&)
+	Ou (||)
+
+Operadores In e Range (são do Kotlin)
+
+	contem (in)
+	nao contem (!in)
+	range/faixa de valores (Int..Int)
+
+*********************************************************
+
+Strings
+
+Manipulação de strings metodos:
+-> first(); // retorna o primeiro caractere = string[0]
+-> last(); // retorna o ultimo caractere = string[string.length-1]
+-> "${val1}, {val2}" // retorna uma string sendo a junção de val1 e va2
+-> capitalize(), toUpperCase(), toLowerCase() e decapitalize(); // formatação do tamanho das letras
+-> trimEnd(), trimStart(), trim() // remoção de espaços no final, inicio e em toda a string
+-> replace(x,y) // substitui x por y dentro da string
+-> "padrão ${valor}".format(valor) // define um formato para uma string
+
+Empty x Blank
+
+Empty: string com 0 caracteres. Ex = ""
+Blank: string com apenas espaços em branco. EX: "    "
+
+**********************************************************
+
+Funções
+
+Esquema das funções:
+	fun nomeDaFuncao(param1 : TipoParam, param2 : TipoParam): TipoRetorno {
+	// processamento da função
+	}
+
+----------------------------------------------------------
+
+Funções de ordem superior: 
+	
+funçoes que possuem funções como parametro
+Ex: fun calcular(n :Int, m :Int, operation: (Int, Int)->Int):Int {
+    return operation(n, m)
+}
+z = calcular(10, 20, {a, b -> a + b})
+// igual a
+z = calcular(10, 20){a, b -> a + b}
+
+----------------------------------------------------------
+
+Funções/extensões
+
+funções definidas para tipos especificos de dados
+	fun TipoVariavel.nomeFuncaoCustomizada(param : TipoParam) = retorno
+EX: fun Double.countDividedByDecimals(decimal: Int) = this / (decimal * 0.1)
+
+----------------------------------------------------------
+
+Extruturas de controle
+
+if/else identico ao java
+when {			// pode ser when(param), quando for utiliza-lo como switch/case
+	case1 -> {}
+	case2 -> {}
+	else -> {}
+} // serve tanto para subtituir o switch/case do java quanto para varios ifs em cadeia
+?: = elvis operator = serve para evitar que uma variavel seja nulla. Ex = var n = outraVariavel ?: 0 //se for nula recebe 0
+
+----------------------------------------------------------
+
+Atribuição
+
+val MaxValue = if (a > b) a else if (a < b) b else b // atribuição in line com ifs encadeados
+
+var t:String? = x!!.funcao() // define que t pode ser nulo, porem x!! diz que  naquela linha x nao é nulo. Entretanto, durante a execução pode ocorrer uma excessão caso valor real de x seja nullo
+
+**********************************************************
+
+Laços de Repetição
+
+While e Do/While identicos ao java
+
+for = define um for usando o in, until, range, downTo e step
+	in -> conta do valor inicial ate o valor estabelecido
+	until -> conta do valor atual ate o valor estabelecido - 1
+	downTo -> conta ate o valor estabelecido de maneira decrescente
+	step -> determina o intervalo de contagem
+
+**********************************************************
+
+Classes
+
+muito parecido com java. 
+Inner Class : classe que é um subclasse de outra classe criada em tempo de execução. Normalmente nao vale a pena usar, ja que os valores dos atributos são sempre recriados toda vez que tenta acessar a classe.
+
+----------------------------------------------------------
+
+Data Class
+
+Classes que armazenam dados e seu uso consistem sempre na copia de uma classe, gerando um novo objeto em memória que será modificado, nao interferindo na classe original.
+
+Open Class
+
+Permite que uma classe possa ser herdada por outra classe. Tem todas as propriedades padrão de uma classe
+
+Abstratic Class
+
+Permite criar classes abstratas. Classes que abstrai um objeto do mundo real, nao podendo ser instânciada
+
+Companion Object
+
+Permite criar uma instancia de uma classe (objeto) dentro da definição da classe. Funciona semelhante a static no java.
+
+Interface
+
+Identico ao java, nao guarda estado e define a estrutura das funções
+
+*******************************************************
+
+Erros e Exceptions
+
+Ambos herdam da classe Throwable. No kotlin tambem existe try/catch igual java.
+Para exibir logs da aplicação = "Log.w("filtro","mensagem")", "Log.e", "Log.i", "Log.d" e outros.
+
+UncaughtExceptionHandler = exceções capturadas por try/catchs durante a aplicação. Quando uma exceção é disparada a JVM chama esse metodo para verificar o que ele faz com a thread onde ocorreu a exceção.
+
+*******************************************************
+
+OBSERVAÇÕES:
+
+Alem do Kotlin Playground, existe o kotlin koans para fazer testes em kotlin de maneira online

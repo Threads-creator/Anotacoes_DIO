@@ -1,0 +1,26 @@
+Arquitetura do android é dividida em camadas:
+
+-> System Apps  ==> conjunto de aplicações padrao do sistema operacional
+
+-> Java API (framework)  ==> fornece os recursos do Android através de APIs em java. Permite a reutilização de componentes do sistema.
+
+-> Native C/C++ libraries / Android Runtime  ==> camada que fornece bibliotecas usadas pelos serviços principais do android (em c e c++). Além de gerenciar o ART (android runtime), uma instancia de uma aplicação (uma maquina virtual) alocada na memória do dispositivo
+
+-> Hardware Abstration Layer (HAL)  ==> biblioteca que fornece interfaces para que o java API se comunique com recursos do kernel
+
+-> Linux Kernel   ==> fazem a comunicação do hardware com  o software através de drivers, alem do gerenciamento de energia
+
+
+************************************************
+
+GSI : imagem genérica do sistema = imagem do SO sem modificações de fabricantes, é o android puro.
+
+DSU = atualização dinâmica do sistema = lançado no android 10, permite que GSIs sejam carregadas em uma partição da memória do dispositivo android, como um SO convidado.
+
+************************************************
+
+Android APP Bundle : recurso que permite que uma aplicação em desenvolvimento seja lançada de uma unica vez. O google reduz o tamanho do download da aplicação ao gerar automaticamente versões especificas do app para cada versão da api android disponível no dispositivo. Além disso a integração de novos modulos a aplicação é facilitada
+
+Play Asset Delivery : usa pacotes de recursos, compostos por recursos (como texturas, sombreadores e sons) e sem nenhum código executável. Usando o Dynamic Delivery, você pode personalizar como e quando cada pacote de recursos é transferido por download em um dispositivo de acordo com três modos de entrega: momento da instalação, exibição rápida e on demand.
+
+Google Play Instant: permite que usuarios testes aplicativos antes de baixarem por completo. Para isso o app "teste" deve ter ate 15 MB. Recurso disponível no android 5 e posterior

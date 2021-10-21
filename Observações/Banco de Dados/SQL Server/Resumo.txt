@@ -1,0 +1,49 @@
+Banco relacional: funciona atraves de abstrações do mundo real em um modelo conceitual que depois se torna um modelo relacional (focado na relação entre o fluxo de dados) para criar o banco de dados.
+
+SGBD : softwares que padronizam tipos de dados, politicas de backup, tipos de usuário e serve de interface para o acesso do banco de dados por outros softwares
+
+Atomicidade: "ou tudo esta certo ou tudo esta errado", funcionalidade que permite alguma alteração no banco apenas se as regras do sgbd forem todas respeitadas
+
+Consistência de dados: garante que um dado será armazenado, no banco de dados como um todo, em todas as instâncias existentes desse banco no SGBD.
+
+Joins:
+	Tipos principais
+	Inner join = retorna todas as colunas que respeitem a condição tanto na tabela da esquerda quando a direita da realação
+	Left join = retorna todas as colunas da tabela da esquerda, mesmo que essas nao respeitem a condição proposta
+	Right join = retorna todas as colunas da tabela da direita, mesmo que essas nao respeitem a condição proposta
+
+Ex: SELECT * FROM Clientes c 
+	INNER JOIN Pedidio p ON c.id = p.idCliente
+
+
+
+Relembrando:
+
+	Para funções de agregação no select (avg, sum, min, max e outros), todos os campos qualitativos devem ser agrupados na clausula "group by"
+	Para definir condições em funções de agregação, deve-se definir dentro do "having" (vem sempre apos o "group by") no final da query
+	Existe as tags is (para verificar se algo é verdadeiro), in (para verificar o range de um valor)
+
+Ex querys com esses conceitos:
+
+select cli.Nome NomeCliente, 
+		p.Codigo ID,
+		p.DataSolicitacao DataPedido,
+		sum(pitem.Preco * pitem.Quantidade) TotalGasto
+	from Clientes cli
+	inner join Pedidos p
+		on cli.Codigo = p.CodigoCliente
+	inner join PedidosItems pitem
+		on p.Codigo = pitem.CodigoPedido
+	inner join Produtos prod
+		on pitem.CodigoProduto = prod.Codigo
+	group by cli.Nome,
+			p.Codigo,
+			p.DataSolicitacao
+	having sum(pitem.Preco * pitem.Quantidade) > 30
+
+
+select *
+	from Clientes cli
+	left join Pedidos ped
+		on	cli.Codigo = ped.CodigoCliente
+	where ped.Codigo is null

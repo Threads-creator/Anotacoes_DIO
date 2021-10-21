@@ -1,0 +1,21 @@
+O git possui 3 objetos base em seu funcionamento:
+
+blob:(bolha) corresponde ao arquivo util a ser armazenado no diretorio, "readme", codigos e outros
+
+Tree:(arvore) corresponde ao arquivo que representa uma arvore(versao) do sistema em desenvolvimento
+
+commit:corresponde ao objeto utilizado para identificar o autor, a mensagem e as alterçãoes feitas em uma arvore ou arquivo.
+
+Todos esses objetos utilizam o SHA1 para gerar codigos criptografados de 40 caracteres que identificam cada um desses elementos. No caso dos blob, quando ocorre uma alteração no arquivo um novo codigo sha1 é gerado. Isso causa uma modificação em cadeia dos outros objetos que estão associados a esse blob.
+
+--------------------------------------------------------------------
+
+Os arquivos no git podem possuir os seguintes status:
+
+untracked: arquivos que ainda não são reconhecidos pelo git, acabados de serem criados
+
+tracked: arquivos reconhecidos pelo git e é subdividido em:
+	umodified: ainda não foi modificado
+	modified: modificado
+	staged: está em estado de espera para ser commitado, "está no fundo do palco esperando ser chamado"
+

@@ -1,0 +1,23 @@
+Design Patterns
+
+Singleton: consiste em definir que apenas uma instância de um objeto será utilizado na aplicação inteira. Para isso deve-se criar uma propriedade privada na classe do mesmo tipo de classe. Torna o construtor padrao privado, depois define um novo publico que gera uma nova instancia da classe apenas caso o atributo privado da propria classe seja null. Se não retorna o atributo privado da classe
+
+Repository: consiste em definir interfaces para manipulação de dados no banco de dados. Dessa forma as aplicações que necessitam dos dados do modelo recorrem as interfaces. Isso permite que banco de dados diferentes sejam usados ja que a interface continua sendo a mesma
+
+Facade: consiste em definir uma classe como responsável de obter algum recurso de outra aplicação. Por exemplo ao acessar outra API, essa classe que será responsável por gerar um HttpClienteConection, definir o RequestBody apropriado (JSON, XML) e enviar a requisição e retornar o resultado
+
+OBS:
+	IHttpClientFactory: nao utilizar dentro de uma claúsula using(). Isso pode gerar estouro de tasks da máquina. Alem de a propria interface ja conseguir gerenciar adequadamente cada conexão http.
+
+Boa prática: conhecer a proposta de todos e as implementaçoes das principais:
+-> Adapter;
+-> Factory;
+-> Strategy;
+-> Builder;
+-> State;
+-> Singleton;
+
+Livros Recomendados:
+-> Design Patterns: Elements of Reusabel Object-Oriented Sofware;
+-> Head First Design Patterns;
+-> Design Patterns in C#;

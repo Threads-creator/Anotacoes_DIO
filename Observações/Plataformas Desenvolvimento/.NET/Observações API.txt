@@ -1,0 +1,25 @@
+Documentação de API:
+
+Pode utilizar o Swagger:
+-Antes deve definir metadados em cada método HTTPOST, Get etc. com "///"
+-Definir um xml de compilação no Projeto 
+-Instalar o Pacote Swagger no projeto
+-Definir o Service e middleware do swagger no projeto
+-Executar e pronto
+
+-----------------------------------------------------
+Entity Framework:
+
+É um ORM (Mapeador relacional de objeto) que permite que desenvolvedores trabalhem com um banco de dados usando .net. Elimina a necessidade da maioria do código de acesso a dados que os desenvolvedores geralmente precisam gravar
+
+-----------------------------------------------------
+Para definir configurações de build do banco de dados vc pode usar classes para cada modelo de dados, ao invez de digitar tudo no método onCreatingModel() do BancoContext. Para isso  a classe que define esses parametros deve implementar a interface IEntityTypeConfiguration
+
+----------------------------------------------------
+Tipos de Injeção de Dependência em .NET:
+
+Singleton: utiliza uma mesma instância de uma classe durante todo o ciclo de vida da aplicação
+
+Scoped: utiliza uma instância para cada request na aplicação
+
+Transient: utiliza uma nova instância toda vez que ocorre uma referência essa classe na aplicação

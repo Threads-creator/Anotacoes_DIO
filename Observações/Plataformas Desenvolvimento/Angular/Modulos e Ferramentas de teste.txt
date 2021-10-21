@@ -1,0 +1,22 @@
+Desing modular de projetos em angular:
+
+Core Module: define serviços singleton, componentes de instância única, configuração e exportação de quaisquer módulos de terceiros necessários no módulo princicipal(App Module).
+
+Shared Module: contem componentes/pipes/diretivas comuns e tambem exporta modulos do angular usados com frequencia (CommonsModule)
+
+Feature Module: organiza um conjunto de recursos da aplicação num módulo de funcionalidade.
+
+Library: possui código que pode ser reutilizado entre aplicações diferêntes.
+
+Angular Element: recurso do angular para criar web componentes, padrao da web para definir novos elementos HTML de uma maneira independente de estrutura e agnóstica de frameworks.
+
+
+Ferramentas de teste em sites:
+
+Cypress: ferramenta para simular as ações do usuário no site, em forma de uma pilha de testes automatica. Funciona em browsers baseados no Chrome.
+
+White House: ferramenta para testar o desempenho da página em si, como tempo de carregamento
+
+Jast: ferramenta para testes unitarios de componentes. Porém para web components pode ser melhor outras ferramentas.
+
+Obs: uma boa prática é mocar as coisas. Definir manualmente os serviços http para o ambiente de testes para evitar que o nao funcionamento da API original interfira nos testes.

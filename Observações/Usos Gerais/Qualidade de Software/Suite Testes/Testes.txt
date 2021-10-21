@@ -1,0 +1,36 @@
+Frameworks de Testes em C#:
+
+-> XUnit
+-> Unit
+-> MSTest
+
+Passos para realizar teste:
+
+Faz-se a definição do contexto em memória do teste. Define instancias de aplicações web, mock de banco de dados EF, HttpClient, entre outros.
+Define-se os testes através de funções com anotações "Fact" (no caso do XUnit)
+
+**************************************
+
+Padrão codificação de metodos AAA:
+
+-> Arragne: definindo inputs
+
+-> Act: definindo açoes, metodos a serem executados
+
+-> Assert: definindo resultado esperado
+
+------------------------------------
+
+Padrao Nome de Testes:
+
+WhenGivenThen: quando_dados_entaoResultadoEsperado
+
+------------------------------------
+
+AutoBogus: Biblioteca que evita o vicio de dados em testes. Essa biblioteca gera dados aleatorios tada vez que um teste é iniciado. AutoFake: gera classes com dados aleatorios
+
+************************************
+
+DICAS:
+
+Utilizar dockers para simular ambientes de testes. Vc sobe um banco de dados toda vez que for realizar testes, por exemplo. E elimina a instancia quando terminar

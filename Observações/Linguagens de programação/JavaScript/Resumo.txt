@@ -1,0 +1,47 @@
+JavaScript
+
+Característicass:
+-> Linguagem Interpretada, começando sempre de cima para baixo;
+-> Tipagem fraca;
+-> Tipagem Dinâmica;
+-> Funções podem ser argumentos de outras funções;
+-> Currying: para cada função que recebe um parametro retorna-se outra função
+-> Hoisting: levanta uma variação ou função para o escopo do bloco que esta. Uma função ou variavel sera criada mesmo se for digitada depois da função que chama ela, ocorre undefined ao invez de um erro
+-> Imutabilidade: uma variavel criada nunca muda. Para inserir mudanças (novas variaveis dentro de um objeto) dev-se gerar outra variavel baseado no anterior. Um objeto nunca é atualizado, mas sim copiado em um novo.
+-> Closure: capacidade de umaa função lembrar aonde ela foi declarada (escopo). Nao muito recomendado por causar confusão em projetos grandes.
+-> Uma função ja declarada nao pode ser subtituída por um novo codigo
+
+
+VAR: so respeita escopo global e escopo de função, pode ser acessada diretamente
+LET: respeita escopo de bloco (if, when, for, etc...), pode ser acessada diretamente
+CONST: respeita escopo de bloco (if, when, for, etc...), depois de inicializada nao pode ser acessada diretamente
+
+Tipos de variáveis:
+
+-> string;
+-> number;
+-> boolean;
+-> null;
+-> undefined;
+-> symbol (permite criar valores unicos);
+
+-> Object;
+-> Function (objeto que pode ser chamado);
+-> Array (objeto com posições de array);
+
+
+Tipos de teste de software abordados no curso:
+
+TDD (Test Driven Development)
+
+-> desenvolve um teste antes de escrever o codigo em si
+-> Passos: 
+	Escrita do teste -> escrita do codigo -> refatoração
+
+BDD (Behavior Driven Development)
+
+-> tecnica de desenvolvimento agil que visa integrar regras de negócio com a linguagens de programação
+-> Pilares: 
+	-> Testes;
+	-> Documentação;
+	-> Exemplos;

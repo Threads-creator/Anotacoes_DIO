@@ -1,0 +1,137 @@
+Obersvações:
+
+apartir do java 10 existe a tipagem por referência utilizando o var. Ex =
+var nome = "thiago";
+
+*********************************************************************
+
+Modificadores de acesso:
+
+private: acessado apenas pela classe que possui o atributo
+public: acessado em qualquer parte do programa
+protected: acessado apenas por classes no mesmo pacote ou que herdam dessa classe.
+default: acessado apenas por classes no mesmo pacote.
+
+métodos static podem ser chamados sem uma instância de uma classe.
+
+Static: identificador faz com que um metodo ou atributo tenha uma unica locação de memoria para todos as variáveis da classe. Se ele mudar em uma instância de classe, em todas as outras instâncias ocorrerá a mesma mudança.
+
+final: identificador que nao permite a mudança da variavel ou metodo depois de declarado. Uma classe com isso nao pode ser herdada.
+
+******************************************************************
+
+ENUMS:
+-> basicamente é dicionários de dados imutáveis
+-> não é permitdo criar novas instâncias
+-> O construtor é sempre declarado como private
+-> por convenção, por serem objetos constantes e imutáveis (static final), os nomes são em MAIÚSCULAS.
+
+*****************************************************************
+
+Nomes e Convenções:
+Classes: Primeiro maiusculo com camel case
+Atributos: primeiro minusculo, camel case e sem numeros
+Metodos: primeiro minusculo, camel case e sem caracteres especiais
+
+Ferramentas para padronizar nomes: 
+-> checkstyle
+-> pmd
+Para usados adicione o id no plugin dentro do arquivo build.gradle. Depois defina as configurações para cada um deles entre chaves. Por fim crie um arquivo xml de configuração de testes.
+
+É uma boa pratica sobrescrever o método Equals da classe criada. Esse metodo compara a referencia de memória entre objetos por padrão
+
+***************************************************************
+
+PRINCIPIOS SOLID:
+
+S = Single Responsibility Principle: uma classe deve possuir uma única responsabilidade dentro do software.
+O = Open-Closed Principle: objetos devem estar abertos para extensão, mas fechados para modificação. Quando novos comportamenteso precisam ser adicionados no software, devemos estender e nao alterar o código fonte original
+L = Liskov Substitution Principle: classes derivadas devem ser substituíveis por suas classes bases
+I = Interface Segregation Principle: uma classe nao deve ser forçada a implementar interfaces e métodos que não serão utilizados. É melhor criar interfaces mais específicas ao invés de termos uma única interface genérica.
+D = Dependency Inversion Principle: dependa de abstrações e nao de implementações. Um módulo de alto nível não deve depender de módulos de baixo nível, ambos devem depender da abstração.
+
+*************************************************************
+
+Date
+
+construtores que usam inteiros e string são depreciados. Recomenda-se usar o construtor padrão ou usando um long de milissegundos.
+
+Instant
+
+-> surgiu no jdk 1.8
+-> imutável e thread safe
+-> modela um ponto instantâneo de uma linha do tempo
+-> indicado para gravar marcações temporais em eventos da sua aplicação
+
+Calendar
+
+-> classe abstrata que provê métodos para converter data entre um instante específico
+-> possui campos específicos para manipulação como MONTH, YEAR, HOUR, etc.
+
+LocalDate
+
+-> classe imutável para representar uma data. 
+-> formato padrão é "yyyy-MM-dd".
+
+LocalTime
+
+-> classe imutável para representar o tempo. 
+-> formato padrão é "hora-minuto-segundo".
+-> pode representar tempo com precisão de nanosegundos.
+
+************************************************************
+
+Exception: Exeções
+
+É uma boa prática sempre que utilizar try/catch ter um finaly junto do bloco.
+
+***********************************************************
+
+List e Set
+
+Lista aceita uma lista de elementos duplicados ou nao. Set tambem aceita uma lista de elementos, mas nao aceita duplicados
+
+***********************************************************
+
+Lambda no Java
+
+Estrutura básica: 
+	InterfaceFuncional nomeVariavel = parametro -> logica
+
+Consumer<tipoRetorno> funcao = parametro -> logica //cria lambda sem retorno, sem a necessidade de definir a interface funcional
+
+Function<tipoParametro, tipoRetorno> nomeVariavel = parametro -> logica // cria lambda com retorno, sem a necessidade de definir a interface funcional
+
+Predicate<tipoParametro> nomeVariavel = parametro -> logica // cria lambda com retorno sempre do tipo boolean, sem a necessidade de definir a interface funcional
+
+Supplier<tipoParametro> nomeVariavel = parametro -> logica // cria lambda com retorno sempre sem nenhum parametro, sem a necessidade de definir a interface funcional
+
+
+Obs: O desempenho de operações imperativas em java sempre é maior do que as operações declarativas.
+
+*********************************************************
+
+Threads
+
+Uma observação importante, no java 8 em diante é possivel executar threads em stream de dados através de funcoes declarativas, utilizando parallel.
+Ex: lista.strem().parallel().forEach(System.out::println); // cria threads para printar os itens da lista
+
+*Notação ::
+Serve para quando receber o valor em uma função lambda, realizar o processamento unico diretamente nesse valor e retorná-lo apenas ele sem tratamento
+
+*********************************************************
+
+Spring framework
+
+Possui marcações @ para definir entidades do banco de dados. Gera uma API  padrao REST com parametros url ja predifinidos.
+
+********************************************************
+
+HEROKU
+
+Serve para fazer mini implementações de projetos. Cria uma maquina virtual com sua aplicação funcinando dentro
+
+***********************************************************
+Dica: acessar site medium para saber mais sobre java
+
+Olhar repositorio : https://github.com/jpbaterabsb/java-avancado

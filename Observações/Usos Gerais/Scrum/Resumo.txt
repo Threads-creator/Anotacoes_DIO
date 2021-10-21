@@ -1,0 +1,36 @@
+SCRUM:
+
+Modelo de desenvolvimento de software agil. Ágil no sentido de responder de maneira eficiente e rapida a mudanças, não em desenvolver o software em menos tempo. Desenvolvimento dividido em etapas iterativas, divide-se a equipe em minigrupos em que todos são responsaveis por atingir as metas do grupo, reuniões periodicas com grupos e cliente para encontrar falhas e melhorias. Pilares do Scrum:
+-> Adaptação;
+-> Transparência;
+-> Inspeção;
+
+Responsabilidades no SCRUM:
+
+-> Product Owner (PO): respresentante da área de negócios, define as funcionalidades do software (Product Backlog), prioriza funcionalidades com valor de negocio
+-> Scrum Master (MS): garante o correto uso do SCRUM, nao é o gerente de projetos, age como facilitador, auxilia comunicação do PO com o time de desenvolvimento
+-> Time de Desenvolvimento (DEV): quem constroi o software, quem desenvolve, testa, cria, desenha tudo que for necessario para entregar o software
+
+Dinâmica no SCRUM:
+
+-> Planejamento da sprint: define o intervalo de tempo que a sprint ocorre e as reuniões a serem feitas. Sprint(arrancada) são fases do desenvolvimento ágil (porções de tempos) que devem ter duração maxima de 30 dias ou menos. Deve durar 8h para sprints de 30 dias, apresentando o que fazer e como fazer
+-> Reuniões diárias: reuniões onde o time de desenvolvimento converça sobre o que foi feito, esta fazendo e o que tem que fazer, duram 15 min
+-> Retrospectiva: reunião feita no final da scrum mostrando tudo o que foi feito, discutindo novos aprendizados ou necessidades
+
+Product Backlog
+
+Lista de tarefas/dependências que devem ser realizadas para que o produto (software) esteja pronto. É composto por Épicos e Estórias
+Épicos = incremento sem muito detalhamento, ajuda a te direcionar dos caminhos que deve seguir
+Estória = detalhamento de um épico, um épico normalmente se divide em várias estorias, onde ficam descritos o que deve acontecer e suas regras de negócio
+Tarefas = conjunto de atividades que o time de desenvolvimento deve desempenhar para entregar a estória
+
+Esse processo é importante para criar um bom escopo de um projeto MVP (Minimum Valuable Product)
+
+Planejamento:
+
+Dividio em Product Backlog e Sprint Backlog. Sprint Backlog consiste na definição do planejamento das atividades ou estorias a serem desenvolvidas durante o sprint
+
+Refinamento: acontece um passo antes da planning. serve para que o time scrum identifique demandas a serem realizadas antes de uma nova sprint
+
+Review: apresenta os resultados das sprints a todos os stackholders e verifica se a demanda agraga valora ao negócio.
+

@@ -1,0 +1,27 @@
+Para uma bliblioteca seja incorporada no js, deve-se passar pelo ECMScript (avaliação dividida em 5 etapas).
+
+site para converter codigo js atual em um codigo compativel com notações anteriores do js: babel.io
+
+Linguagens de tipagem para usar com javascript:
+-> Typescript;
+-> Flow;
+
+
+Ferramentas para ajudar na automatização de testes de unidades de software:
+
+* = mocha: permite testar uma funcionalidade. Por padrão so aceita funções que executam em ate 2000ms. Para mudar isso deve-se mudar o contexto da function(recomendado usar) com timeout.
+	Estrutura basica:
+		Describe("nome do teste", função{
+			beforeEach(function(){...
+				// devine um codigo que será executado antes de cada funçao abaixo
+			});
+			it("nome do metodo", function(metodo em si)(done - para metodos assincronos){
+				// codigo da funcionalidade aqui
+				assert.equal(....) // teste de comparação da unidade
+			});
+			it.only(..) -> executa apenas essa funcionalidade especificada
+		});
+
+* = chai: ferramenta de asserts, torna o codigo mais descritivo. Serve para usar funções de validação do codigo escrito (objetos, metodos e outros).
+
+* = sinon: ferramenta que permite criar funções "espiãs" dentro de um teste. Uma função espiã é uma função chamada para trazer informações sobre a execução de outra função que esta sendo testada, verifica se ela foi chamada, os valores retornados e etc..

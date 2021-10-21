@@ -1,0 +1,58 @@
+CLI comandos .net:
+
+muito utilizados:
+
+-> dotnet new "tipoAplicação" -n "nomeDaAplicação" => cria uma nova aplicação
+-> dotnet restore  => restaura os pacotes da aplicação
+-> dotnet build => restaura os pacotes e compila a aplicação
+
+Código-fonte:
+
+Escrito em C# é compilado em linguagem intermediaria (IL). O código e o IL são armazenados em forma de arquivo executável assembly, com extensão .exe ou .dll. O assembly é carregado no CLR (comon linguage runtime). O CLR executa a compilação em JIT (just in time) e transforma o IL em código de máquina nativo
+
+	CLR oferece tambem:
+	->Garbage Collector
+	->Exception Handler
+	->Resources Manager
+
+
+Arrays
+
+Sao definidos o tamanho assim que instanciados. O tamanho nao se altera com o decorrer da aplicação. Exemplos de implementação
+
+int[] t = new int[3];		// define um variavel array com nome t
+int[] t = new int[3] {1, 2, 3}; // inicializando logo na declaração do array
+int[] t = {1, 2, 3} 	// inicializando logo na declaração do array
+int[,,] t = new int[3, 2]; // define um array multidimensional
+
+Acessibilidade
+
+-> public : pode ser acessado por qualquer classe da aplicação
+-> protect : pode ser acessado pela classe detentora e por classes que herdam da classe detentora (classes filhas)
+-> internal : pode ser acessada apenas pelo mesmo assembly da aplicação. So pode ser acessada por classes do mesmo projeto. Classes de outros projetos nao conseguem acessá-lo
+-> private  : pode ser acessado apenas pela classe detentora
+
+Herança
+
+Todas as variáveis com acessibilidade public, internal e/ou protect são acessados pelas classes filhas (especializações)
+Uma classe so pode herdar de uma unica classe, mas pode implementar diversas interfaces
+
+Structs
+
+São estruturas de dados que podem conter membros de dados e membros de ação. Não aceitam herança. Armazenam os dados diretamente (armazena na stack), ja as classes armazenam uma referencia ao objeto (armazena no heap). 
+
+Interfaces
+
+Uma interface pode conter métodos, propriedades, eventos e indexadores.
+
+Eventos
+
+Eventos são metodos que as classes tem conhecimento deles apenas em tempo de execução. Exemplo: clicar em algo, passar o mouse sobre, etc. Para que um mecanismo de eventos funcione, é necessário usar um tipo de estrutura chamado Delegate, uma variável que guarda o endereço de uma função.
+
+
+
+
+/* OBSERVAÇÕES IMPORTANTES */
+Tudo em .NET é um objeto
+
+Verificar o using depois
